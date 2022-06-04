@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400|Purple+Purse:400');
+
+html {font-size: 100%;} /*16px*/
+
+body {
+  background: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #000000;
+}
+
+p {margin-bottom: 1rem;}
+
+h1, h2, h3, h4, h5 {
+  margin: 3rem 0 1.38rem;
+  font-family: 'Purple Purse', sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.488rem;
+}
+
+h2 {font-size: 2.074rem;}
+
+h3 {font-size: 1.728rem;}
+
+h4 {font-size: 1.44rem;}
+
+h5 {font-size: 1.2rem;}
+
+small, .text_small {font-size: 0.833rem;}
+.container {
+  max-width: 975px;
+  margin: 0 auto;
+}
+.container-more {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.pt-sm{
+  padding-top: 10px;
+}
+.pt-md{
+  padding-top: 20px;
+}
+.pt-lg {
+  padding-top: 30px;
+  }
+.mt-sm{
+  margin-top: 10px;
+}
+.mt-md{
+  margin-top: 20px;
+}
+.mt-lg{
+  margin-top: 30px;
+}
+.m-auto{
+  margin: auto;
+}
+.my-sm{
+  margin: 10px auto;
+}
+.my-md{
+  margin: 20px auto;
+}
+.my-lg{
+  margin: 30px auto;
+}
+.py-sm{
+  padding: 10px 0;
+}
+.py-md{
+  padding: 20px 0;
+}
+.py-lg{
+  padding:30px 0;
+}
+.flex{
+  display: flex;
+  flex: 0 1 auto ;
+}
+.justify-between{
+  justify-content: space-between;
+}
+.text-center{
+  text-align: center ;
+}
+.inbut-size{
+  width: 100%;
+  height: 80%;
+  &:focus-visible{
+    outline: none;
+  }
+}
+input[type=text] {
+  border: none;
+  border-bottom: 2px solid blue;
+  transition: all 1s ease-in-out;
+  &:focus{
+    transition: all 1s ease-in-out;
+    border-bottom: 2px solid green;
+  }
+}
+textarea{
+  border: none;
+  border-bottom: 2px solid blue;
+  transition: all 1s ease-in-out;
+  &:focus{
+    transition: all 1s ease-in-out;
+    border-bottom: 2px solid green;
+  }
+}
+@keyframes input {
+  0%{
+    border-bottom-width:thin ;
+  }
+
+}
