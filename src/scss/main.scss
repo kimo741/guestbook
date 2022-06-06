@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400|Purple+Purse:400');
-
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.charts-1 .num,
+.charts-1 .total{
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+}
 html {font-size: 100%;} /*16px*/
 
 body {
@@ -10,7 +25,13 @@ body {
   color: #000000;
 }
 
-p {margin-bottom: 1rem;}
+p {
+  margin-bottom: 1rem;
+  font-size: 1.55rem
+}
+span{
+  font-size: 1.2rem
+}
 
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
@@ -28,7 +49,7 @@ h2 {font-size: 2.074rem;}
 
 h3 {font-size: 1.728rem;}
 
-h4 {font-size: 1.44rem;}
+h4 {font-size: 1.55rem;}
 
 h5 {font-size: 1.2rem;}
 
@@ -68,6 +89,12 @@ small, .text_small {font-size: 0.833rem;}
 .my-md{
   margin: 20px auto;
 }
+.mx-sm{
+  margin: 0 10px;
+}
+.mx-md{
+  margin: 0 20px;
+}
 .my-lg{
   margin: 30px auto;
 }
@@ -84,8 +111,15 @@ small, .text_small {font-size: 0.833rem;}
   display: flex;
   flex: 0 1 auto ;
 }
+
 .justify-between{
   justify-content: space-between;
+}
+.justify-center{
+  justify-content: center;
+}
+.items-center{
+  align-items: center;
 }
 .text-center{
   text-align: center ;

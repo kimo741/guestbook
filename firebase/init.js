@@ -4,13 +4,12 @@ import "firebase/compat/storage";
 import "firebase/compat/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDL8L8qqhZ7zwHE0BH-jWpk_hqLd9u0O6Q",
-  authDomain: "vue-e-commerc.firebaseapp.com",
-  projectId: "vue-e-commerc",
-  storageBucket: "vue-e-commerc.appspot.com",
-  messagingSenderId: "989704752760",
-  appId: "1:989704752760:web:1403a6396b5716ba35278d",
-  measurementId: "G-YDT07E3J0J",
+  apiKey: "AIzaSyBhlHhjnNMRv8tEB5xY0qajViyVYlYlvrs",
+  authDomain: "guestbook-b5bea.firebaseapp.com",
+  projectId: "guestbook-b5bea",
+  storageBucket: "guestbook-b5bea.appspot.com",
+  messagingSenderId: "363092692705",
+  appId: "1:363092692705:web:f87d79533654c4e4bff1a0"
 };
 firebase.initializeApp(firebaseConfig);
 

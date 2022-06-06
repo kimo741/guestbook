@@ -5,7 +5,7 @@ import { db } from "../init";
 // import { auth } from "../init.js";
 //add categories and products
 export const addMessage = (collectionName, payload) => {
-  return db.collection(collectionName).add({payload});
+  return db.collection(collectionName).add(payload);
 };
 //edite message and products
 
@@ -13,8 +13,8 @@ export const editeMessage = (collectionName, payload) => {
   return db.collection(collectionName).doc(payload.id).update({payload});
 };
 // delete message and categories
-export const delletMessage = (collectionName, message) => {
-  return db.collection(collectionName).doc(message.id).delete();
+export const delletMessage = (collectionName, id) => {
+  return db.collection(collectionName).doc(id).delete();
 };
 //get message and products
 export const getMessage = (collectionName) => {

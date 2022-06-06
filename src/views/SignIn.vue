@@ -85,40 +85,7 @@ export default {
 </script>
 
 <style lang="scss">
-*,
-*::after,
-*::before {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-html {
-  -webkit-box-sizing: inherit;
-  box-sizing: inherit;
-  font-size: 62.5%;
-}
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-}
-.charts-1 .num,
-.charts-1 .total,
-h3 {
-  font-size: 2.5rem;
-  text-transform: capitalize;
-  margin-bottom: 1.5rem;
-}
-.containerrr {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(221, 221, 221, 0.166);
-  box-shadow: 1px 1px 8px rgba(119, 119, 119, 0.486);
-}
-.home {
-  margin-top: 5rem;
-  width: 100%;
-  height: 100%;
-}
+
 .log {
   //background-image: url("../assets/bg.png");
   display: flex;

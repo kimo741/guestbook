@@ -3,71 +3,78 @@
     <div class="header-title">
       <h1>Your Messages</h1>
     </div>
+<!--  button to add message  -->
     <v-e-button
-        size="big"
         color="success"
+        size="big"
         @click="showModal"
-    > Add Messages </v-e-button>
+    > Add Messages
+    </v-e-button>
+<!--  model form to input message to add  -->
     <ui-modale>
       <template #formes>
         <div class="flex justify-between py-lg">
           <div>
         <textarea
+            v-model="message"
+            class="inbut-size"
+            placeholder="type your message"
             rows="3"
             type="text"
-            v-model="message"
-            placeholder="type your message"
-            class="inbut-size"
         />
           </div>
           <div>
             <v-e-button
-                size="med"
                 color="info"
+                size="med"
                 @click="addMessage"
-            > Add </v-e-button>
+            > Add
+            </v-e-button>
           </div>
         </div>
       </template>
     </ui-modale>
-    {{messagesCard}}
-<message-card
-v-for="(crad , i ) in messagesCard"
-:key="i"
-:card="crad"
-
-/>
+<!--    display all messages  -->
+<!--    it has edite , delete and replay action -->
+    <message-card
+        class="my-lg bg"
+        v-for="(crad , i ) in messagesCard"
+        :key="i"
+        :card="crad"
+    />
   </div>
 </template>
 <script>
 import UiModale from "@/components/UI/UiModale.vue";
 import VEButton from "@/components/UI/UiBtn";
 import MessageCard from "@/components/MessageCard";
+
 export default {
   components: {MessageCard, VEButton, UiModale},
-  data(){
-    return{
-    message: '',
+  data() {
+    return {
+
+      message: "",
     };
   },
-  computed:{
-    messagesCard(){
-      this.$store.getters["messages/messages"]
+  computed: {
+    messagesCard() {
+      return this.$store.getters["messages/messages"]
     }
   },
-  methods:{
+  methods: {
     showModal() {
       this.$store.commit(
           "messages/TOGLE_MODALE",
       );
     },
-    addMessage(){
-
+    addMessage() {
+      this.$store.dispatch("messages/addMessages", Object.assign({}, {value: this.message}))
       this.$store.commit(
           "messages/TOGLE_MODALE",
       );
     },
-    getData(){
+    getData() {
       this.$store.dispatch("messages/getMessages")
     }
   },
@@ -76,3 +83,11 @@ export default {
   }
 }
 </script>
+<style>
+.bg{
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 2px 5px #eee;
+  background: linear-gradient( to right , #0080003d , white);
+}
+</style>
