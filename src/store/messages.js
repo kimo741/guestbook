@@ -40,18 +40,17 @@ const actions = {
             console.log(err);
         });
     }, addMessages({commit}, payload) {
-        addMessage("message", payload).then(() => {
-            commit("ADD_MESSAGES", payload);
+        addMessage("message", payload).then((doc) => {
+            commit("ADD_MESSAGES", Object.assign({} , payload , {id: doc.id} ));
             console.log(payload)
         }).catch((err) => {
             console.log(err);
         });
     }, deleteMessage({ state ,  commit}, payloadId) {
-        console.log(payloadId)
-        delletMessage("message", payloadId)
+       return  delletMessage("message", payloadId)
             .then(() => {
-                commit("DELETE_MESSAGE" , state.messages.filter((m) => {
-                    m.id != payloadId }))
+                commit("DELETE_MESSAGE" , state.messages.filter((m) => m.id != payloadId  )
+            )
             }).catch((err) => {
             console.log(err);
         });

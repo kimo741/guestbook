@@ -1,5 +1,6 @@
 <template>
   <div class="child flex justify-between items-center ">
+
     <confirm-del
         v-if="conffDel"
         @closeconfirm="closeConfirm"
@@ -68,6 +69,7 @@ export default {
       this.conffDel = false;
     },
     confirmDell(){
+      console.log(this.deletedID)
       this.$store.dispatch("messages/deleteMessage" ,this.deletedID )
       this.conffDel = false;
     },
@@ -78,7 +80,7 @@ export default {
       );
     },
     deleteMessage(id){
-      console.log(id)
+      this.deletedID = id
       this.conffDel = true;
     }
   },

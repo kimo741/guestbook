@@ -2,6 +2,7 @@
   <div class="container my-lg">
     <div class="header-title">
       <h1>Your Messages</h1>
+      {{messagesCard}}
     </div>
 <!--  button to add message  -->
     <v-e-button
