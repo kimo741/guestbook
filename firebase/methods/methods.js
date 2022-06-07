@@ -10,7 +10,7 @@ export const addMessage = (collectionName, payload) => {
 //edite message and products
 
 export const editeMessage = (collectionName, payload) => {
-  return db.collection(collectionName).doc(payload.id).update({payload});
+  return db.collection(collectionName).doc(payload.id).set(payload);
 };
 // delete message and categories
 export const delletMessage = (collectionName, id) => {

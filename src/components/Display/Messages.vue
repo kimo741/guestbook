@@ -1,8 +1,8 @@
 <template>
-  <div class="container my-lg">
-    <div class="header-title">
-      <h1>Your Messages</h1>
-      {{messagesCard}}
+  <div class="container my-lg pt-lg " >
+    <div class="header-title pt-lg">
+      <h2>Your Messages</h2>
+<!--      {{messagesCard}}-->
     </div>
 <!--  button to add message  -->
     <v-e-button
@@ -12,8 +12,10 @@
     > Add Messages
     </v-e-button>
 <!--  model form to input message to add  -->
-    <ui-modale>
-      <template #formes>
+    <ui-modale
+    @closeModal="closeModal"
+    >
+      <template #formes v-if="addmessage">
         <div class="flex justify-between py-lg">
           <div>
         <textarea
@@ -43,6 +45,8 @@
         :key="i"
         :card="crad"
     />
+<!--    modale for edit or replay message-->
+
   </div>
 </template>
 <script>
@@ -54,7 +58,7 @@ export default {
   components: {MessageCard, VEButton, UiModale},
   data() {
     return {
-
+      addmessage:false,
       message: "",
     };
   },
@@ -65,8 +69,16 @@ export default {
   },
   methods: {
     showModal() {
+      this.addmessage = true ;
       this.$store.commit(
           "messages/TOGLE_MODALE",
+      );
+    },
+    closeModal() {
+      this.addmessage = false;
+      this.$store.commit(
+          "messages/TOGLE_MODALE",
+          // this.ShowModal != this.ShowModal
       );
     },
     addMessage() {
@@ -74,6 +86,7 @@ export default {
       this.$store.commit(
           "messages/TOGLE_MODALE",
       );
+          this.addmessage = false;
     },
     getData() {
       this.$store.dispatch("messages/getMessages")

@@ -1,4 +1,4 @@
-import {addMessage, delletMessage, getMessage} from "../../firebase/methods/methods";
+import {addMessage, delletMessage, getMessage ,editeMessage} from "../../firebase/methods/methods";
 // , addMessage , delletMessage ,edtitMessage
 const prefix = "category";
 
@@ -49,12 +49,18 @@ const actions = {
     }, deleteMessage({ state ,  commit}, payloadId) {
        return  delletMessage("message", payloadId)
             .then(() => {
-                commit("DELETE_MESSAGE" , state.messages.filter((m) => m.id != payloadId  )
+                commit("DELETE_MESSAGE" , state.messages.filter((m) => m.id !== payloadId  )
             )
             }).catch((err) => {
             console.log(err);
         });
     },
+    async editeMessage({ state ,  commit} , payload ){
+        await editeMessage("message" ,payload ).then((doc)=>{
+
+        } )
+
+    }
 
 };
 const getters = {

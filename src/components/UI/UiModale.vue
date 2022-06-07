@@ -1,9 +1,10 @@
 <template>
   <Transition name="fade">
-    <div class="modal-container" v-show="ShowModal" @click.self="closeModal">
+<!--    @click.self="$emit('closeModal')"-->
+    <div class="modal-container" v-if="ShowModal" >
       <div class="modal-content">
         <slot name="formes"></slot>
-        <div class="close-bt" @click="closeModal">
+        <div class="close-bt" @click="$emit('closeModal')">
           <span class="icon">
             <span class="line line-1"></span>
             <span class="line line-2"></span>
@@ -21,6 +22,7 @@ export default {
     ShowModal() {
       return this.$store.state.messages.ShowModal;
     },
+
   },
   methods: {
     closeModal() {
